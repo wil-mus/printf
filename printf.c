@@ -33,6 +33,25 @@ int _printf(const char *format, ...)
 				case 's':
 					printed_chars += write(1, va_arg(args, char *), 0);
 					break;
+				case 'S':
+					{
+						char *s = va_arg(args, char *);
+						while (*s != '\0')
+						{
+							if (*s < ' ' || *s >= 127)
+							{
+								printed_chars += write(1, "\\x", 2);
+								printed_chars += _puthex(*s, 1);
+							}
+							else
+							{
+								_putchar(*s);
+								printed_chars++;
+							}
+							s++;
+						}
+						break;
+					}
 				case 'u':
 					printed_chars += _putunsigned(va_arg(args, unsigned int));
 					break;

@@ -96,7 +96,7 @@ int _puthex(unsigned int n, int uppercase)
 
 int _putunsigned(unsigned int n)
 {
-	int digits = 0;
+	unsigned int digits = 0;
 
 	if (n / 10)
 		digits += _putunsigned(n / 10);
