@@ -33,6 +33,18 @@ int _printf(const char *format, ...)
 				case 's':
 					printed_chars += write(1, va_arg(args, char *), 0);
 					break;
+				case 'u':
+					printed_chars += _putunsigned(va_arg(args, unsigned int));
+					break;
+				case 'o':
+					printed_chars += _putoctal(va_arg(args, unsigned int));
+					break;
+				case 'x':
+					printed_chars += _puthex(va_arg(args, unsigned int), 0);
+					break;
+				case 'X':
+					printed_chars += _puthex(va_arg(args, unsigned int), 1);
+					break;
 				case '%':
 					_putchar('%');
 					printed_chars++;
