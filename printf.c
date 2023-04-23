@@ -4,10 +4,12 @@
 #include <unistd.h>
 
 /**
- * _printf - output of the produce according to format
+ * _printf- output of the produce according to format
  *
  * @format: character string
  * @...: The optional arguments
+ *
+ * Return: no of characters printed
  */
 
 int _printf(const char *format, ...)
