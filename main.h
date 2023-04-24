@@ -43,6 +43,7 @@ int print_pointer(va_list types, char buffer[],	int flags, int width, int precis
 int print_non_printable(va_list types, char buffer[], int flags, int width, int precision, int size);
 int print_rot13string(va_list types, char buffer[], int flags, int width, int precision, int size);
 int is_printable(char);
+int print_reverse(va_list types, char buffer[], int flags, int width, int precision, int size);
 int append_hexa_code(char, char[], int);
 int is_digit(char);
 long int convert_size_number(long int num, int size);
@@ -52,5 +53,19 @@ int write_num(int ind, char bff[], int flags, int width, int precision, int leng
 int write_pointer(char buffer[], int ind, int length, int width, int flags, char padd, char extra_c, int padd_start);
 int write_unsgnd(int is_negative, int ind, char buffer[], int flags, int width, int precision, int size);
 int _printf(const char *format, ...);
+typedef struct fmt fmt_t;
+int handle_print(const char *fmt, int *i, va_list list, char buffer[], int flags, int width, int precision, int size);
 
+#define S_LONG 2 
+#define S_SHORT 1
+/**
+ * struct fmt - Struct op
+ * @fmt: The format.
+ * @fn: The function associated.
+ */
+struct fmt
+{
+	char fmt; 
+	int (*fn)(va_list, char[], int, int, int, int);
+};
 #endif
