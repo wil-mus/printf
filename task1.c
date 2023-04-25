@@ -6,7 +6,7 @@
  * @parameter: describe the parameter
  * Return: 0 when successfull
  */
-
+/**
 int main(void)
 
 {
@@ -17,3 +17,4 @@ int main(void)
 
 	return (0);
 }
+*/
