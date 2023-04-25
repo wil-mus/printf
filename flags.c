@@ -1,5 +1,4 @@
 #include "main.h"
-#include <string.h>
 
 /**
  * gets_flags - active flags to be calculated
@@ -7,7 +6,7 @@
  * @format: strings in which arguments are printed
  * @a: function paramater
  *
- * RReturn: flags
+ * Return: flags
  */
 
 int gets_flags(const char *format, int *a)

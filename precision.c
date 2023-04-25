@@ -7,7 +7,9 @@
  *
  * @format: formated string
  * @a: argument list to be printed
+ * @list: íst
  *
+ * Retturn: precision
  */
 
 int gets_precision(const char *format, int *a, va_list list)

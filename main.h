@@ -20,6 +20,7 @@
 #include <unistd.h>
 #include <ctype.h>
 #include <stdio.h>
+#include <string.h>
 
 /**
  * struct fmt - Struct op

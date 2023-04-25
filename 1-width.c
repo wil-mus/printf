@@ -1,11 +1,11 @@
 #include "main.h"
-#include <ctype.h>
 
 /**
  * gets_width - width to be printed
  *
  * @format: print the arguments of string formated
  * @a: argument list
+ * @list: list
  *
  * Return: width
  */
