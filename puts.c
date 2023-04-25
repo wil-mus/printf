@@ -99,7 +99,7 @@ int _putunsigned(unsigned int n)
 	unsigned int digits = 0;
 
 	if (n / 10)
-		digits += _putunsigned(n / 10);
+		digits += _put unsigned int(n / 10);
 	_putchar((n % 10) + '0');
 	digits++;
 
