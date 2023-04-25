@@ -19,6 +19,7 @@
 #include <stddef.h>
 #include <unistd.h>
 #include <ctype.h>
+#include <stdio.h>
 
 /**
  * struct fmt - Struct op
