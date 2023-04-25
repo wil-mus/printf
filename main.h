@@ -45,12 +45,13 @@ typedef struct fmt fmt_t;
 
 int _putchar(char c);
 int _printf(const char *format, ...);
+int b_printf(const char *format, ...);
 int _putunsigned(unsigned int n);
 int gets_size(const char *format, int *a);
 int gets_width(const char *format, int *a, va_list list);
 int _putoctal(unsigned int n);
 int _puthex(unsigned int n, int uppercase);
-
+void prints_buffer(char buffer[], int *buff_ind);
 int write_num(int ind, char bff[], int flags, int width, int precision, int length, char padd, char extra_c);
 int write_pointer(char buffer[], int ind, int length, int width, int flags, char padd, char extra_c, int padd_start);
 int write_unsgnd(int is_negative, int ind, char buffer[],int flags, int width, int precision, int size);

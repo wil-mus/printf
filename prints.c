@@ -51,6 +51,12 @@ int print_non_printable(va_list types, char buffer[], int flags,
  * print_reverse - prints strins in reverse
  *
  * Description: This is a function thet prints the strings in reverse
+ * @types: the argument list
+ * @buffer: print handling array
+ * @flags: the active flags
+ * @width: size of width
+ * @precision: the precision
+ * @size: size
  *
  * Return: count
  */
@@ -78,6 +84,7 @@ int print_reverse(va_list types, char buffer[], int flags,
 	for (a = count - 1; a >= 0; a--)
 	{
 		char z = s[a];
+
 		write(1, &z, 1);
 	}
 	return (count);

@@ -13,7 +13,7 @@
  * @width: get width.
  * @precision: Precision specification
  * @size: Size specifier
- * 
+ *
  * Return: 1 or 2;
  */
 

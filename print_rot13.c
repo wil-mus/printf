@@ -32,6 +32,7 @@ int print_rot13(va_list types, char buffer[], int flags, int width, int precisio
 
 	if (s == NULL)
 		s = "( )";
+
 	for (a = 0; s[a]; a++)
 	{
 		for (b = 0; in[b]; b++)
@@ -51,5 +52,6 @@ int print_rot13(va_list types, char buffer[], int flags, int width, int precisio
 			count++;
 		}
 	}
+
 	return (count);
 }

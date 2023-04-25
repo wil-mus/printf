@@ -21,7 +21,7 @@ int _printf(const char *format, ...)
 	int flag_hash = 0;
 
 	va_start(args, format);
-	
+
 	while (*format)
 	{
 		if (*format == '%')
@@ -41,6 +41,7 @@ int _printf(const char *format, ...)
 				{
 					flag_hash = 1;
 				}
+				format++;
 			}
 			switch (*format)
 			{
