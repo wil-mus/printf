@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * get_size - function that calculates size of cast
+ * gets_size - function that calculates size of cast
  *
  * @format: formated string to print arguments
  * @a: argument list printed
@@ -9,7 +9,7 @@
  * Return: size
  */
 
-int get_size(const char *format, int *a)
+int gets_size(const char *format, int *a)
 {
 	int size = 0;
 

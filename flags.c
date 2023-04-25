@@ -2,7 +2,7 @@
 #include <string.h>
 
 /**
- * get_flags - active flags to be calculated
+ * gets_flags - active flags to be calculated
  *
  * @format: strings in which arguments are printed
  * @a: function paramater
@@ -10,7 +10,7 @@
  * RReturn: flags
  */
 
-int get_flags(const char *format, int *a)
+int gets_flags(const char *format, int *a)
 {
 	int flags = 0;
 	const char *c = format + *a + 1;

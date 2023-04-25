@@ -3,18 +3,17 @@
 #include <ctype.h>
 
 /**
- * get_precision - calculate printing precision
+ * gets_precision - calculate printing precision
  *
  * @format: formated string
  * @a: argument list to be printed
  *
  */
 
-int get_precision(const char *format, int *a)
+int gets_precision(const char *format, int *a, va_list list)
 {
 	int precision = -1;
 	const char *c = format + *a + 1;
-	va_list list;
 
 	if (*c != '.')
 	{

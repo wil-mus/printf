@@ -20,14 +20,35 @@
 #include <unistd.h>
 #include <ctype.h>
 
+/**
+ * struct fmt - Struct op
+ *
+ * @fmt: format
+ * @fn: associated function
+ */
+struct fmt
+{
+	char fmt;
+	int (*fn)(va_list, char[], int, int, int, int);
+};
+
+/**
+ * typedef struct fmt fmt_t - Struct op
+ *
+ * @fmt: Format.
+ * @fn: Function associated.
+ */
+
+typedef struct fmt fmt_t;
+
 int _putchar(char c);
 int _printf(const char *format, ...);
 int _putunsigned(unsigned int n);
+int gets_size(const char *format, int *a);
+int gets_width(const char *format, int *a, va_list list);
 int _putoctal(unsigned int n);
 int _puthex(unsigned int n, int uppercase);
 
-int handle_write_char(char c, char buffer[], int flags, int width, int precision, int size);
-int write_number(int is_positive, int ind, char buffer[], int flags, int width, int precision, int size);
 int write_num(int ind, char bff[], int flags, int width, int precision, int length, char padd, char extra_c);
 int write_pointer(char buffer[], int ind, int length, int width, int flags, char padd, char extra_c, int padd_start);
 int write_unsgnd(int is_negative, int ind, char buffer[],int flags, int width, int precision, int size);
@@ -62,24 +83,19 @@ int write_num(int ind, char bff[], int flags, int width, int precision, int leng
 int write_pointer(char buffer[], int ind, int length, int width, int flags, char padd, char extra_c, int padd_start);
 int write_unsgnd(int is_negative, int ind, char buffer[], int flags, int width, int precision, int size);
 int _printf(const char *format, ...);
-typedef struct fmt fmt_t;
-int handle_print(const char *fmt, int *i, va_list list, char buffer[], int flags, int width, int precision, int size);
-
-int get_precision(const char *format, int *a);
-int get_flags(const char *format, int *a);
-int print_percent(va_list types, char buffer[],
-		int flags, int width, int precision, int size);
-int print_int(va_list types, char buffer[], int flags, int width, int precision, int size);
-int print_string(va_list types, char buffer[],
-		int flags, int width, int precision, int size);
-int print_char(va_list types, char buffer[],
-		int flags, int width, int precision, int size);
-int print_binary(va_list types, char buffer[],
-		int flags, int width, int precision, int size);
-int handle_write_char(char c, char buffer[], int flags,
 		int width, int precision, int size);
-int convert_size_number(int n, int size);
+int handle_print(const char *fmt, int *i, va_list list, char buffer[],
+		int flags, int width, int precision, int size);
 int write_number(int is_negative, int i, char *buffer,
 		const char *flags, int width, int precision, int size);
+
+
+int is_printable(char);
+int append_hexa_code(char, char[], int);
+int is_digit(char);
+
+long int convert_size_number(long int num, int size);
+long int convert_size_unsgnd(unsigned long int num, int size);
+
 
 #endif
