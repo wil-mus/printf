@@ -17,13 +17,14 @@
  * Return: count
  */
 
-int print_non_printable(va_list types, int flags,
+int print_non_printable(va_list types, char buffer[], int flags,
 		int width, int precision, int size)
 {
 	int a = 0;
 	int count = 0;
 	char *s = va_arg(types, char *);
 
+	UNUSED(buffer);
 	UNUSED(flags);
 	UNUSED(width);
 	UNUSED(precision);
