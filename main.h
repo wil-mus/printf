@@ -76,6 +76,8 @@ int print_pointer(va_list types, char buffer[], int flags, int width, int precis
 int print_rot13(va_list types, char buffer[], int flags, int width, int precision, int size);
 int print_reverse(va_list types, char buffer[],	int flags, int width, int precision, int size);
 int print_non_printable(va_list types, char buffer[], int flags, int width, int precision, int size);
+
+
 long int convert_size_number(long int num, int size);
 long int convert_size_unsgnd(unsigned long int num, int size);
 int write_number(int is_positive, int ind, char buffer[], int flags, int width, int precision, int size);
@@ -90,5 +92,6 @@ int handle_write_char(char c, char buffer[], int flags, int width, int precision
 int is_printable(char);
 int append_hexa_code(char, char[], int);
 int is_digit(char);
+void int_binary(unsigned int n, char *binary, int a);
 
 #endif
