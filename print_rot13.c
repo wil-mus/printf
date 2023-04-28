@@ -13,7 +13,8 @@
  * Return: count
  */
 
-int print_rot13(va_list types, char buffer[], int flags, int width, int precision, int size)
+int print_rot13(va_list types, char buffer[], int flags,
+		int width, int precision, int size)
 {
 	char c;
 	char *s;

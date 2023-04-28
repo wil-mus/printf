@@ -31,7 +31,7 @@ int print_char(va_list types, char buffer[],
  * @width: get width.
  * @precision: Precision specification
  * @size: Size specifier
- * 
+ *
  * Return: Number of chars printed
  */
 int print_string(va_list types, char buffer[],
@@ -73,8 +73,11 @@ int print_string(va_list types, char buffer[],
 		else
 		{
 			for (i = width - length; i > 0; i--)
+			{
 				write(1, " ", 1);
+			}
 			write(1, &str[0], length);
+
 			return (width);
 		}
 	}
@@ -105,7 +108,7 @@ int print_percent(va_list types, char buffer[],
 	UNUSED(width);
 	UNUSED(precision);
 	UNUSED(size);
-	
+
 	return (write(1, "%%", 1));
 }
 
