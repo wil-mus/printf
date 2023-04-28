@@ -3,14 +3,14 @@
 void print_buffer(char buffer[], int *buff_ind);
 
 /**
- * b_printf - function of printf
+ * _printf - function of printf
  *
  * @format: format
  *
  * Return: chars printed
  */
 
-int b_printf(const char *format, ...)
+int _printf(const char *format, ...)
 {
 	int a, printed = 0, printed_chars = 0;
 	int flags, width, precision, size, buff_ind = 0;

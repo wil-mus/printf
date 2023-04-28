@@ -12,12 +12,16 @@
 int gets_size(const char *format, int *a)
 {
 	int size = 0;
+	int b = *a + 1;
 
-	if (format[*a + 1] == 'l')
+	if (format[b] == 'l')
 		size = S_LONG;
-	else if (format[*a + 1] == 'h')
+	else if (format[b] == 'h')
 		size = S_SHORT;
+	if (size == 0)
+		*a = b - 1;
+	else
+		*a = b;
 
-	*a += (size > 0) ? 2 : 1;
 	return (size);
 }

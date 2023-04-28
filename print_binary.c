@@ -1,22 +1,44 @@
 #include "main.h"
 
 /**
- * int_binary - function to print binary
+ * print_binary - function that prints integers in binary
  *
- * @n: unsigned integer
- * @binary: character array to store binary string
- * @a: keep track of current position in binary string
+ * @args: argement list
  *
+ * Return: no of characters printed
  */
-void int_binary(unsigned int n, char *binary, int a)
+
+int prints_binary(va_list args)
 {
+	int bit, printed_chars = 0;
+	int n = va_arg(args, int);
+
+	if (n < 0)
+	{
+		_putchar('-');
+		printed_chars++;
+		n = -n;
+	}
 	if (n == 0)
 	{
-		binary[a] = '\0';
+		_putchar('0');
+		printed_chars++;
+		return (printed_chars);
 	}
-	else
+
+	for (bit = (sizeof(int) * 8) - 1; bit >= 0; bit--)
 	{
-		binary[a] = (n & 1) ? '1' : '0';
-		int_binary(n >> 1, binary, - 1);
+		if (n & (1 << bit))
+		{
+			_putchar('1');
+			printed_chars++;
+		}
+		else if (printed_chars > 0)
+		{
+			_putchar('0');
+			printed_chars++;
+		}
 	}
+
+	return (printed_chars);
 }

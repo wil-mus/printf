@@ -1,8 +1,4 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdarg.h>
-#include <stddef.h>
-#include <string.h>
 
 /**
  * print_non_printable - prints ASCII codes
@@ -79,13 +75,16 @@ int print_reverse(va_list types, char buffer[], int flags,
 	{
 		s = ")Null(";
 	}
-	count = strlen(s);
 
-	for (a = count - 1; a >= 0; a--)
+	for (a = 0; s[a]; a++)
+		;
+
+	for (a = a - 1; a >= 0; a--)
 	{
 		char z = s[a];
 
 		write(1, &z, 1);
+		count++;
 	}
 	return (count);
 

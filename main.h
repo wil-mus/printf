@@ -92,6 +92,5 @@ int handle_write_char(char c, char buffer[], int flags, int width, int precision
 int is_printable(char);
 int append_hexa_code(char, char[], int);
 int is_digit(char);
-void int_binary(unsigned int n, char *binary, int a);
-
+int prints_binary(va_list args);
 #endif

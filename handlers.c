@@ -1,9 +1,10 @@
 #include "main.h"
 #include <stdio.h>
 
-/************************* WRITE HANDLE *************************/
+/** WRITE HANDLE */
 /**
  * handle_write_char - Prints a string
+ *
  * @c: char types.
  * @buffer: Buffer array to handle print
  * @flags:  Calculates active flags.
@@ -45,9 +46,10 @@ int handle_write_char(char c, char buffer[],
 	return (write(1, &buffer[0], 1));
 }
 
-/************************* WRITE NUMBER *************************/
+/** WRITE NUMBER */
 /**
  * write_number - Prints a string
+ *
  * @is_negative: Lista of arguments
  * @ind: char types.
  * @buffer: Buffer array to handle print
@@ -81,6 +83,7 @@ int write_number(int is_negative, int ind, char buffer[],
 
 /**
  * write_num - Write a number using a bufffer
+ *
  * @ind: Index at which the number starts on the buffer
  * @buffer: Buffer
  * @flags: Flags

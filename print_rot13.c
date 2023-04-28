@@ -31,7 +31,7 @@ int print_rot13(va_list types, char buffer[], int flags, int width, int precisio
 	UNUSED(size);
 
 	if (s == NULL)
-		s = "( )";
+		s = "(AHHY )";
 
 	for (a = 0; s[a]; a++)
 	{
